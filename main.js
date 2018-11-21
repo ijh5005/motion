@@ -1,33 +1,26 @@
-
-// Reference page elements for dropping current device acceleration values into
-
 var accElem = document.getElementById('acceleration'),
-    accGravityElem = document.getElementById('acceleration-gravity'),
+    accGravityElem = document.getElementById('acceleration-gravity');
 
-// Define an event handler function for processing the device’s acceleration values
+function handleMotionEvent(event) {
+  var acc = e.acceleration,
+      maxAcc = Math.max(acc.x, acc.y, acc.z),
+      accGravity = e.accelerationIncludingGravity,
+      maxAccGravity = Math.max(accGravity.x, accGravity.y, accGravity.z);
+  accElem.innerHTML = 'Current acceleration: ' + maxAcc +  'm/s^2';
+  accGravityElem.innerHTML = 'Value incl. gravity: ' + maxAccGravity + 'm/s^2';
+}
 
-    handleDeviceMotionEvent = function(e) {
-        // Get the current acceleration values in 3 axes and find the greatest of these
+if(window.DeviceMotionEvent){
+  window.addEventListener("devicemotion", handleMotionEvent, true);
+}
 
-        var acc = e.acceleration,
-            maxAcc = Math.max(acc.x, acc.y, acc.z),
+// function deviceOrientationHandler(event) {
+//   document.getElementById('deviceOrientationHandler').innerText = event;
+// }
 
-        // Get the acceleration values including gravity and find the greatest of these
 
-            accGravity = e.accelerationIncludingGravity,
-            maxAccGravity = Math.max(accGravity.x, accGravity.y, accGravity.z);
+// var acceleration = window.acceleration;
 
-        // Output to the user the greatest current acceleration value in any axis, as
-        // well as the greatest value in any axis including the effect of gravity
-
-        accElem.innerHTML = 'Current acceleration: ' + maxAcc +  'm/s^2';
-        accGravityElem.innerHTML = 'Value incl. gravity: ' + maxAccGravity + 'm/s^2';
-    };
-
-// Assign the event handler function to execute when the device is moving
-
-window.addEventListener('devicemotion', handleDeviceMotionEvent, false);
-
-setTimeout(() => {
-
-})
+// if (window.DeviceOrientationEvent) {
+//   window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+// }
