@@ -1,4 +1,3 @@
-debugger
 
 // Reference page elements for dropping current device acceleration values into
 
@@ -8,7 +7,6 @@ var accElem = document.getElementById('acceleration'),
 // Define an event handler function for processing the device’s acceleration values
 
     handleDeviceMotionEvent = function(e) {
-        debugger
         // Get the current acceleration values in 3 axes and find the greatest of these
 
         var acc = e.acceleration,
