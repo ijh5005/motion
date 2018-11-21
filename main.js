@@ -1,5 +1,5 @@
-var accElem = document.getElementById('acceleration'),
-    accGravityElem = document.getElementById('acceleration-gravity');
+var accElem = document.getElementById('acceleration');
+var accGravityElem = document.getElementById('acceleration-gravity');
 
 function handleMotionEvent(event) {
   var acc = e.acceleration,
@@ -10,9 +10,7 @@ function handleMotionEvent(event) {
   accGravityElem.innerHTML = 'Value incl. gravity: ' + maxAccGravity + 'm/s^2';
 }
 
-if(window.DeviceMotionEvent){
-  window.addEventListener("devicemotion", handleMotionEvent, true);
-}
+window.addEventListener("devicemotion", handleMotionEvent, false);
 
 // function deviceOrientationHandler(event) {
 //   document.getElementById('deviceOrientationHandler').innerText = event;
