@@ -14,14 +14,9 @@ if (window.DeviceMotionEvent != undefined) {
 		document.getElementById("aY").innerHTML = e.acceleration.y.toFixed(4);
 		document.getElementById("aZ").innerHTML = e.acceleration.z.toFixed(4);
 
-		const currentText = document.getElementById("track").innerText;
-
-
+    const tracker = document.getElementById("track");
+    setInterval(() => {
+      tracker.innerText = currentText + "|||| x:" + e.accelerationIncludingGravity.x + "y:" + e.accelerationIncludingGravity.y + "z:" + e.accelerationIncludingGravity.z;
+    }, 1000);
 	}
 }
-
-const tracker = document.getElementById("track").innerHTML
-
-setInterval(() => {
-  track.innerText = currentText + "|||| x:" + e.accelerationIncludingGravity.x + "y:" + e.accelerationIncludingGravity.y + "z:" + e.accelerationIncludingGravity.z;
-}, 1000);
