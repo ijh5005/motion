@@ -6,7 +6,7 @@
 <style>
 body {
 	font-family: helvetica, arial, sans serif;
-	background-color: blue;
+	background-color: green;
 }
 #sphere {
 	position: absolute;
@@ -58,6 +58,10 @@ if (window.DeviceMotionEvent != undefined) {
 			document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta;
 			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma;
 		}
+
+		document.getElementById("aX").innerHTML = e.acceleration.x;
+		document.getElementById("aY").innerHTML = e.acceleration.y;
+		document.getElementById("aZ").innerHTML = e.acceleration.z;
 	}
 
 	setInterval( function() {
@@ -89,14 +93,6 @@ function boundingBoxCheck(){
 	if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = -vx; }
 	if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = -vy; }
 }
-
-const handleMotion = (e) => {
-	document.getElementById("aX").innerHTML = e.acceleration.x;
-	document.getElementById("aY").innerHTML = e.acceleration.y;
-	document.getElementById("aZ").innerHTML = e.acceleration.z;
-}
-
-window.addEventListener("devicemotion", handleMotion, true);
 
 </script>
 
