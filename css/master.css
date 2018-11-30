@@ -1,0 +1,15 @@
+body {
+	font-family: helvetica, arial, sans serif;
+}
+
+.specs {
+  margin: 1em;
+}
+
+.circle {
+  height: 4em;
+  width: 4em;
+  background-color: #4d4dff;
+  border-radius: 50%;
+  color: #fff;
+}
