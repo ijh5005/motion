@@ -15,6 +15,13 @@ if (window.DeviceMotionEvent != undefined) {
 		document.getElementById("aZ").innerHTML = e.acceleration.z.toFixed(4);
 
 		const currentText = document.getElementById("track").innerText;
-		document.getElementById("track").innerHTML = currentText + "|||| x:" + e.accelerationIncludingGravity.x + "y:" + e.accelerationIncludingGravity.y + "z:" + e.accelerationIncludingGravity.z;
+
+
 	}
 }
+
+const tracker = document.getElementById("track").innerHTML
+
+setInterval(() => {
+  track.innerText = currentText + "|||| x:" + e.accelerationIncludingGravity.x + "y:" + e.accelerationIncludingGravity.y + "z:" + e.accelerationIncludingGravity.z;
+}, 1000);
