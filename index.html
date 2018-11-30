@@ -89,7 +89,7 @@ function boundingBoxCheck(){
 	if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = -vy; }
 }
 
-const handleMotion = () => {
+const handleMotion = (e) => {
 	document.getElementById("aX").innerHTML = e.acceleration.x;
 	document.getElementById("aY").innerHTML = e.acceleration.y;
 	document.getElementById("aZ").innerHTML = e.acceleration.z;
@@ -101,4 +101,3 @@ window.addEventListener("devicemotion", handleMotion, true);
 
 </body>
 </html>
-
