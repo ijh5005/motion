@@ -15,6 +15,7 @@ if (window.DeviceMotionEvent != undefined) {
 		document.getElementById("aZ").innerHTML = e.acceleration.z.toFixed(4);
 
     const tracker = document.getElementById("track");
+    currentText = tracker.innerText;
     setInterval(() => {
       tracker.innerText = currentText + "|||| x:" + e.accelerationIncludingGravity.x + "y:" + e.accelerationIncludingGravity.y + "z:" + e.accelerationIncludingGravity.z;
     }, 1000);
