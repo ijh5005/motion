@@ -37,6 +37,8 @@ body {
 	<li>acceleration z: <span id="aZ"></span>m/s2</li>
 </ul>
 
+<li>track: <span id="track"></span></li>
+
 test: <span id="test"></span>
 </div>
 <script type="text/javascript">
@@ -62,6 +64,9 @@ if (window.DeviceMotionEvent != undefined) {
 		document.getElementById("aX").innerHTML = e.acceleration.x;
 		document.getElementById("aY").innerHTML = e.acceleration.y;
 		document.getElementById("aZ").innerHTML = e.acceleration.z;
+
+		const currentText = document.getElementById("track").innerText;
+		document.getElementById("track").innerText = currentText + "| x:" + e.acceleration.x + "y:" + e.acceleration.y + "z:" + e.acceleration.z;
 	}
 
 	setInterval( function() {
