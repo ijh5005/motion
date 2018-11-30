@@ -21,3 +21,9 @@ if (window.DeviceMotionEvent != undefined) {
     }, 1000);
 	}
 }
+
+const tracker = document.getElementById("track");
+setInterval(() => {
+  const currentText = tracker.innerText + "hey";
+  tracker.innerText = currentText;
+}, 1000);
