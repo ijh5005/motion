@@ -10,9 +10,9 @@ if (window.DeviceMotionEvent != undefined) {
 			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma;
 		}
 
-		document.getElementById("aX").innerHTML = e.acceleration.x;
-		document.getElementById("aY").innerHTML = e.acceleration.y;
-		document.getElementById("aZ").innerHTML = e.acceleration.z;
+		document.getElementById("aX").innerHTML = e.acceleration.x.toFixed(4);
+		document.getElementById("aY").innerHTML = e.acceleration.y.toFixed(4);
+		document.getElementById("aZ").innerHTML = e.acceleration.z.toFixed(4);
 
 		const currentText = document.getElementById("track").innerText;
 		document.getElementById("track").innerText = currentText + "|||| x:" + e.accelerationIncludingGravity.x + "y:" + e.accelerationIncludingGravity.y + "z:" + e.accelerationIncludingGravity.z;

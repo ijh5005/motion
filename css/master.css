@@ -8,8 +8,8 @@ body {
 
 .circle {
   height: 4em;
-  width: 4em;
+  width: 20em;
   background-color: #4d4dff;
-  border-radius: 50%;
+  border-radius: 6%;
   color: #fff;
 }
