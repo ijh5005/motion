@@ -1,5 +1,6 @@
 body {
 	font-family: helvetica, arial, sans serif;
+  background-color: #fff;
 }
 
 .specs {
@@ -12,4 +13,8 @@ body {
   background-color: #4d4dff;
   border-radius: 6%;
   color: #fff;
+}
+
+#track {
+  color: #000;
 }
