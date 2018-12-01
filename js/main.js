@@ -16,14 +16,8 @@ if (window.DeviceMotionEvent != undefined) {
 
     const tracker = document.getElementById("track");
     setInterval(() => {
-      const currentText = tracker.innerText;
+      const currentText = tracker.innerText + "hey";
       tracker.innerText = currentText + "|||| x:" + e.accelerationIncludingGravity.x + "y:" + e.accelerationIncludingGravity.y + "z:" + e.accelerationIncludingGravity.z;
     }, 1000);
 	}
 }
-
-const tracker = document.getElementById("track");
-setInterval(() => {
-  const currentText = tracker.innerText + "hey";
-  tracker.innerText = currentText;
-}, 1000);
