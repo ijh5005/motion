@@ -14,6 +14,7 @@ if (window.DeviceMotionEvent != undefined) {
 		document.getElementById("aY").innerHTML = e.acceleration.y.toFixed(4);
 		document.getElementById("aZ").innerHTML = e.acceleration.z.toFixed(4);
 
-    document.getElementById("track").innerText += `x: + ${e.accelerationIncludingGravity.x}, y: ${e.accelerationIncludingGravity.y}, z: ${e.accelerationIncludingGravity.z} /n`;
+    const text = document.getElementById("track").innerText;
+    document.getElementById("track").innerText = text + `x: + ${e.accelerationIncludingGravity.x}, y: ${e.accelerationIncludingGravity.y}, z: ${e.accelerationIncludingGravity.z} /n`;
 	}
 }
